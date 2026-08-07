@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeonBot | Rodrigo Rafael Bautista Navarrete</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">🦁 LeonBot</div>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#proyecto">Proyecto</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero" id="inicio">
+    <div class="hero-content">
+        <h1>Chatbot Conversacional con IA</h1>
+        <p class="subtitle">Integración de Telegram + Gemini + Groq</p>
+        <button class="cta-btn" onclick="document.getElementById('chat-toggle').click()">
+            Probar el asistente
+        </button>
+    </div>
+</section>
+
+<section class="info" id="proyecto">
+    <div class="card">
+        <h2>Sobre el proyecto</h2>
+        <p>
+            Este proyecto integra un bot conversacional de Telegram con dos modelos de
+            inteligencia artificial distintos: <strong>Google Gemini</strong> y
+            <strong>Groq (Llama 3.3)</strong>. El asistente responde preguntas de
+            forma natural en tiempo real, tanto desde Telegram como desde esta página web.
+        </p>
+    </div>
+    <div class="card">
+        <h2>Tecnologías utilizadas</h2>
+        <ul>
+            <li>Python + Flask</li>
+            <li>pyTelegramBotAPI</li>
+            <li>Google Gemini API</li>
+            <li>Groq API</li>
+            <li>Render (despliegue en producción)</li>
+        </ul>
+    </div>
+</section>
+
+<footer class="footer" id="contacto">
+    <p>Desarrollado por <strong>Rodrigo Rafael Bautista Navarrete</strong></p>
+    <p>Matrícula: 233110372 · Ingeniería en Tecnologías de la Información</p>
+    <p>Universidad Politécnica Metropolitana de Hidalgo</p>
+</footer>
+
+<!-- Widget de chat flotante -->
+<div class="chat-widget">
+    <button id="chat-toggle" class="chat-bubble">💬</button>
+
+    <div id="chat-window" class="chat-window hidden">
+        <div class="chat-header">
+            <span>🦁 LeonBot</span>
+            <button id="chat-close">✕</button>
+        </div>
+        <div id="chat-messages" class="chat-messages">
+            <div class="msg bot">👋 ¡Hola! Soy LeonBot, el asistente de Rodrigo. ¿En qué puedo ayudarte?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+            <button id="chat-send">➤</button>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
